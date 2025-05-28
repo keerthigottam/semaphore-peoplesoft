@@ -1,0 +1,17 @@
+<svg width="220" height="45" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bigger logo to match navigation text size -->
+  
+  <!-- Icon/Symbol - bigger -->
+  <circle cx="22" cy="22" r="10" fill="white" opacity="0.9"/>
+  <rect x="17" y="17" width="10" height="2" fill="#2c3e50" rx="1"/>
+  <rect x="17" y="21" width="8" height="2" fill="#2c3e50" rx="1"/>
+  <rect x="17" y="25" width="10" height="2" fill="#2c3e50" rx="1"/>
+  
+  <!-- Text - Much bigger to match navigation -->
+  <text x="40" y="20" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="white">
+    PeopleSoft
+  </text>
+  <text x="40" y="32" font-family="Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">
+    Automation Platform
+  </text>
+</svg>

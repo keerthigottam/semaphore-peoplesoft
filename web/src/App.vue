@@ -115,13 +115,25 @@
     <v-navigation-drawer
       app
       dark
-      :color="darkMode ? '#003236' : '#005057'"
+      :color="darkMode ? '#1a252f' : '#2c3e50'"
       fixed
-      width="260"
+      width="280"
       v-model="drawer"
       mobile-breakpoint="960"
       v-if="$route.path.startsWith('/project/')"
     >
+      <!-- PeopleSoft Logo Header -->
+      <div class="peoplesoft-header pa-4 d-flex align-center">
+        <img
+          src="@/assets/branding/logo.svg"
+          alt="PeopleSoft Automation Platform"
+          class="peoplesoft-logo"
+          style="height: 45px; width: auto;"
+        />
+      </div>
+
+      <v-divider class="white opacity-20"></v-divider>
+
       <v-menu bottom max-width="235" max-height="100%" v-if="project">
         <template v-slot:activator="{ on, attrs }">
           <v-list class="pa-0 overflow-y-auto">
@@ -184,7 +196,7 @@
             </v-list-item-icon>
 
             <v-list-item-content>
-              {{ $t('newProject2') }}
+              New Environment
             </v-list-item-content>
           </v-list-item>
 
@@ -198,7 +210,7 @@
             </v-list-item-icon>
 
             <v-list-item-content>
-              {{ $t('restoreProject') }}
+              Restore Environment
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -211,7 +223,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ $t('newProject2') }}</v-list-item-title>
+            <v-list-item-title>New Environment</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -221,7 +233,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ $t('restoreProject') }}</v-list-item-title>
+            <v-list-item-title>Restore Environment</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -238,7 +250,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ $t('dashboard') }}</v-list-item-title>
+            <v-list-item-title>Dashboard</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -249,11 +261,11 @@
           data-testid="sidebar-templates"
         >
           <v-list-item-icon>
-            <v-icon>mdi-check-all</v-icon>
+            <v-icon>mdi-cog-outline</v-icon>
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ $t('taskTemplates') }}</v-list-item-title>
+            <v-list-item-title>Operations</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -268,7 +280,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ $t('schedule') }}</v-list-item-title>
+            <v-list-item-title>Schedule</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -279,11 +291,11 @@
           data-testid="sidebar-inventory"
         >
           <v-list-item-icon>
-            <v-icon>mdi-monitor-multiple</v-icon>
+            <v-icon>mdi-server-network</v-icon>
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ $t('inventory') }}</v-list-item-title>
+            <v-list-item-title>Infrastructure</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -298,7 +310,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ $t('environment') }}</v-list-item-title>
+            <v-list-item-title>Environment</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -313,7 +325,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ $t('keyStore') }}</v-list-item-title>
+            <v-list-item-title>Security Keys</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -327,7 +339,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ $t('repositories') }}</v-list-item-title>
+            <v-list-item-title>Code Repositories</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -342,7 +354,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ $t('integrations') }}</v-list-item-title>
+            <v-list-item-title>Integrations</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -356,7 +368,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ $t('team') }}</v-list-item-title>
+            <v-list-item-title>Team</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -464,7 +476,7 @@
                 </v-list-item-icon>
 
                 <v-list-item-content>
-                  {{ $t('users') }}
+                  Users
                 </v-list-item-content>
               </v-list-item>
 
@@ -478,7 +490,7 @@
                 </v-list-item-icon>
 
                 <v-list-item-content>
-                  {{ $t('activeTasks') }}
+                  Active Jobs
                 </v-list-item-content>
               </v-list-item>
 
@@ -492,7 +504,7 @@
                 </v-list-item-icon>
 
                 <v-list-item-content>
-                  {{ $t('runners') }}
+                  Job Runners
                 </v-list-item-content>
               </v-list-item>
 
@@ -502,7 +514,7 @@
                 </v-list-item-icon>
 
                 <v-list-item-content>
-                  {{ $t('editAccount') }}
+                  Edit Account
                 </v-list-item-content>
               </v-list-item>
 
@@ -516,7 +528,7 @@
                 </v-list-item-icon>
 
                 <v-list-item-content>
-                  {{ $t('api_tokens') }}
+                  API Tokens
                 </v-list-item-content>
               </v-list-item>
 
@@ -526,7 +538,7 @@
                 </v-list-item-icon>
 
                 <v-list-item-content>
-                  {{ $t('signOut') }}
+                  Sign Out
                 </v-list-item-content>
               </v-list-item>
             </v-list>
@@ -564,7 +576,7 @@
       >
         <v-progress-circular
           :size="70"
-          color="primary"
+          color="#0066CC"
           indeterminate
         ></v-progress-circular>
       </v-container>
@@ -587,11 +599,11 @@
           {{ snackbarText }}
         </v-alert>
         <div class="mb-6">
-          <v-btn text color="blue darken-1" @click="refreshPage()">
+          <v-btn text color="#0066CC" @click="refreshPage()">
             <v-icon left>mdi-refresh</v-icon>
             {{ $t('refreshPage') }}
           </v-btn>
-          <v-btn text color="blue darken-1" @click="signOut()">
+          <v-btn text color="#0066CC" @click="signOut()">
             <v-icon left>mdi-exit-to-app</v-icon>
             {{ $t('relogin') }}
           </v-btn>
@@ -602,6 +614,52 @@
   <v-app v-else></v-app>
 </template>
 <style lang="scss">
+
+/* PeopleSoft Color Variables */
+:root {
+  --peoplesoft-primary: #2c3e50;    /* Dark blue-gray like your HTML */
+  --peoplesoft-secondary: #34495e;
+  --peoplesoft-accent: #3f6ad8;      /* Blue accent */
+  --peoplesoft-light: #ecf0f1;
+}
+
+/* PeopleSoft Header Styling */
+.peoplesoft-header {
+  background: linear-gradient(135deg, var(--peoplesoft-blue) 0%, var(--peoplesoft-dark-blue) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.peoplesoft-logo {
+  /* No filter - use original logo colors */
+}
+
+.peoplesoft-title {
+  line-height: 1.2;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-20 {
+  opacity: 0.2;
+}
+
+/* Override Vuetify primary color */
+.v-application .primary {
+  background-color: var(--peoplesoft-blue) !important;
+  border-color: var(--peoplesoft-blue) !important;
+}
+
+.v-application .primary--text {
+  color: var(--peoplesoft-blue) !important;
+  caret-color: var(--peoplesoft-blue) !important;
+}
+
+/* Navigation Drawer Customizations */
+.v-navigation-drawer--dark {
+  background-color: #2c3e50 !important; /* Flat color, no gradient */
+}
 
 .DarkModeSwitch {
   .v-input__prepend-outer {
@@ -617,7 +675,7 @@
     transform: translateY(-1px);
 
     .v-icon {
-      color: #2196f3 !important;
+      color: #4D94FF !important;
     }
   }
 }
@@ -778,10 +836,10 @@ import TaskLogDialog from '@/components/TaskLogDialog.vue';
 import delay from '@/lib/delay';
 
 const PROJECT_COLORS = [
-  'red',
-  'blue',
-  'orange',
-  'green',
+  '#0066CC', // PeopleSoft Blue
+  '#4D94FF', // Light Blue
+  '#003D7A', // Dark Blue
+  '#28A745', // Success Green
 ];
 
 const LANGUAGES = {
@@ -1054,13 +1112,13 @@ export default {
 
       switch (e.action) {
         case 'new':
-          text = `Project ${projectName} created`;
+          text = `Environment ${projectName} created`;
           break;
         case 'edit':
-          text = `Project ${projectName} saved`;
+          text = `Environment ${projectName} saved`;
           break;
         case 'delete':
-          text = `Project ${projectName} deleted`;
+          text = `Environment ${projectName} deleted`;
           break;
         case 'restore':
           break;
