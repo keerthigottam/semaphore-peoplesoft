@@ -122,14 +122,12 @@
       mobile-breakpoint="960"
       v-if="$route.path.startsWith('/project/')"
     >
-      <!-- PeopleSoft Logo Header -->
-      <div class="peoplesoft-header pa-4 d-flex align-center">
-        <img
-          src="@/assets/branding/logo.svg"
-          alt="PeopleSoft Automation Platform"
-          class="peoplesoft-logo"
-          style="height: 45px; width: auto;"
-        />
+      <!-- PeopleSoft Header -->
+      <div class="peoplesoft-header pa-4">
+        <div class="title-container">
+          <h1 class="peoplesoft-title">PeopleSoft</h1>
+          <h2 class="peoplesoft-subtitle">Automation Platform</h2>
+        </div>
       </div>
 
       <v-divider class="white opacity-20"></v-divider>
@@ -617,22 +615,45 @@
 
 /* PeopleSoft Color Variables */
 :root {
-  --peoplesoft-primary: #2c3e50;    /* Dark blue-gray like your HTML */
-  --peoplesoft-secondary: #34495e;
-  --peoplesoft-accent: #3f6ad8;      /* Blue accent */
-  --peoplesoft-light: #ecf0f1;
+  --peoplesoft-primary: #1a365d;    /* Darker blue for better contrast */
+  --peoplesoft-secondary: #2c5282;  /* Medium blue */
+  --peoplesoft-accent: #4299e1;     /* Bright blue for accents */
+  --peoplesoft-light: #ebf8ff;      /* Very light blue */
+  --peoplesoft-sidebar: #1a2637;    /* Dark sidebar background */
 }
 
 /* PeopleSoft Header Styling */
 .peoplesoft-header {
-  background: linear-gradient(135deg, var(--peoplesoft-blue) 0%, var(--peoplesoft-dark-blue) 100%);
+  background: linear-gradient(to right, var(--peoplesoft-sidebar) 0%, #243a5a 100%);
+  padding: 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.peoplesoft-logo {
-  /* No filter - use original logo colors */
+.title-container {
+  text-align: center;
+  max-width: 240px;
+  margin: 0 auto;
+  padding: 8px 0;
 }
 
+.peoplesoft-title {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.peoplesoft-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  margin: 4px 0 0;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Other styles */
 .peoplesoft-title {
   line-height: 1.2;
 }
@@ -658,7 +679,22 @@
 
 /* Navigation Drawer Customizations */
 .v-navigation-drawer--dark {
-  background-color: #2c3e50 !important; /* Flat color, no gradient */
+  background-color: var(--peoplesoft-sidebar) !important;
+}
+
+/* Menu items for better contrast */
+.v-list-item__title {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.v-list-item__subtitle {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Active menu item styling */
+.v-list-item--active {
+  background-color: rgba(66, 153, 225, 0.15) !important;
+  border-left: 3px solid var(--peoplesoft-accent);
 }
 
 .DarkModeSwitch {
